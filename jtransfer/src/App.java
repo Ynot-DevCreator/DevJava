@@ -1,7 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 import java.io.File;
-import java.io.FileOutputStream; // aaaa
+import java.io.FileOutputStream;
 import java.io.FileWriter; //classe para escrever no arquivo
 import java.io.IOException; // classe para tratar exceções no arquivo
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class App {
         
         
         // classe para teclado
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner (System.in, "UTF-8");
 
         System.out.println("\n-----------------------------");
         System.out.println("Pesquisa de Transporte Diário");
@@ -62,10 +62,11 @@ public class App {
         System.out.println("-----------------------------");
        
         try(BufferedWriter escritor = new BufferedWriter(
-                new OutputStreamWriter(
+                 new OutputStreamWriter(
                     new FileOutputStream("dados.txt", true), StandardCharsets.UTF_8))){
 
-                    escritor.write(nome+","+meioTransporte+"\n");
+                    escritor.write(nome);
+                    escritor.write(","+meioTransporte+"\n");
                     System.out.println("Dados gravados com sucesso");
 
         }catch (IOException e){
