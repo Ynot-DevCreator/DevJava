@@ -72,6 +72,6 @@ public class App {
         }catch (IOException e){
            System.out.println("Erro ao gravar os dados"+e.getMessage());
         }
-        System.out.println("Você digitou: " + nome);
+        
      }
 }
