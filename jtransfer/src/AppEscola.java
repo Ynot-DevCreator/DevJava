@@ -24,9 +24,10 @@ public class AppEscola { //PascalCasing
         
         System.out.println("Nome: "+aluno.getNome());
         System.out.println("Idade: "+aluno.getIdade());
+        
         if (temFaculdade == 1) {
             System.out.print("Faculdade: Sim");
-               
+
         }else if (temFaculdade == 0) {
             System.out.print("Faculdade: Não");
         } 
