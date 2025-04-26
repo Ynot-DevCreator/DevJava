@@ -35,8 +35,8 @@ public class App {
         System.out.println("Escolha uma opção (1-6)");
         opcaoTransporte = scanner.nextInt();
         
-        while (opcaoTransporte < 1 || opcaoTransporte > 6) { /* (||) = ou */ /*(&&) = e */
-        System.out.print("Opção Inválida, Tente Novamente: ");
+        while (opcaoTransporte < 1 || opcaoTransporte > 6) {
+          System.out.print("Opção Inválida, Tente Novamente: ");
           opcaoTransporte = scanner.nextInt();          
         }
         
@@ -72,6 +72,6 @@ public class App {
         }catch (IOException e){
            System.out.println("Erro ao gravar os dados"+e.getMessage());
         }
-
+        System.out.println("Você digitou: " + nome);
      }
 }
