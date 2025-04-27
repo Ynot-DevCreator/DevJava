@@ -13,6 +13,8 @@ public class AppEscola { //PascalCasing
         //Classe objeto = new Construtor (parametros);
         int continuar;
         int fazfacul = 0;
+        int alunos = 1;
+        int somaIdades = 0;
         
         File file = new File("faculdade.txt");
         if (file.exists()) {
@@ -34,8 +36,10 @@ public class AppEscola { //PascalCasing
         int idade = scanner.nextInt();
         System.out.print("Faz Faculdade (1-Sim 0-Não): ");
         int temFaculdade = scanner.nextInt();
-
-        if (temFaculdade == 1) {
+        
+        somaIdades += idade; // soma das idades para fazer a media
+        
+        if (temFaculdade == 1) { // somar quantidade de pessoas que fazem faculdade
             fazfacul++;
             
         }
@@ -60,10 +64,19 @@ public class AppEscola { //PascalCasing
         System.out.print("Você quer Continuar(1-Sim 2-Não): ");
         continuar = scanner.nextInt();
         
+        if (continuar == 1) { // pegar quantidade de alunos
+            alunos++;
+        }
+
         } while (continuar == 1);
         
+        double mediaIdades = (double) somaIdades / alunos; // media das idades
+        String mediaFormat = String.format("%.0f", mediaIdades); // formatar a media das idades tirando as casas decimais
+
         FileWriter escritor = new FileWriter("faculdade.txt");
-        escritor.write("Fazem faculdade: "+ fazfacul);
+        escritor.write("Alunos: "+alunos+"\n");
+        escritor.write("Fazem faculdade: "+ fazfacul+"\n");
+        escritor.write("Media de Idade: "+mediaFormat);
         escritor.close();
 
         System.out.println("Programa finalizado. Quantidade salva no arquivo!");
