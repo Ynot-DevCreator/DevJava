@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 public class AppEscola { //PascalCasing
     // main
@@ -73,11 +74,16 @@ public class AppEscola { //PascalCasing
         double mediaIdades = (double) somaIdades / alunos; // media das idades
         String mediaFormat = String.format("%.0f", mediaIdades); // formatar a media das idades tirando as casas decimais
 
-        FileWriter escritor = new FileWriter("faculdade.txt");
-        escritor.write("Alunos: "+alunos+"\n");
-        escritor.write("Fazem faculdade: "+ fazfacul+"\n");
+        try (FileWriter escritor = new FileWriter("faculdade.txt")){
+        escritor.write("Aluno(s): "+alunos+"\n");
+        escritor.write("Faz(em) faculdade: "+ fazfacul+"\n");
         escritor.write("Media de Idade: "+mediaFormat);
         escritor.close();
+        System.out.println("Dados gravados com sucesso");
+        
+        }catch(IOException e){
+             System.out.println("Erro ao gravar os dados"+e.getMessage());
+        }
 
         System.out.println("Programa finalizado. Quantidade salva no arquivo!");
         //Desafio
