@@ -1,8 +1,8 @@
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
-import java.io.File;
+//import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter; //classe para escrever no arquivo
+//import java.io.FileWriter; //classe para escrever no arquivo
 import java.io.IOException; // classe para tratar exceções no arquivo
 import java.util.Scanner;
 import java.nio.charset.StandardCharsets;

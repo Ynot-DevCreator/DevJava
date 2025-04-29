@@ -75,11 +75,11 @@ public class AppEscola { //PascalCasing
         String mediaFormat = String.format("%.0f", mediaIdades); // formatar a media das idades tirando as casas decimais
 
         try (FileWriter escritor = new FileWriter("faculdade.txt")){
-        escritor.write("Aluno(s): "+alunos+"\n");
-        escritor.write("Faz(em) faculdade: "+ fazfacul+"\n");
-        escritor.write("Media de Idade: "+mediaFormat);
-        escritor.close();
-        System.out.println("Dados gravados com sucesso");
+            escritor.write("Aluno(s): "+alunos+"\n");
+            escritor.write("Faz(em) faculdade: "+ fazfacul+"\n");
+            escritor.write("Media de Idade: "+mediaFormat);
+            escritor.close();
+            System.out.println("Dados gravados com sucesso");
         
         }catch(IOException e){
              System.out.println("Erro ao gravar os dados"+e.getMessage());
